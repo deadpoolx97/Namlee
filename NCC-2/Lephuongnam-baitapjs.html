@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .select {
+      width: 200px;
+      padding: 10px 20px;
+      outline: none;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+<select class="select" id="select_1">
+  <option value="className" selected="selected">className</option>
+  <option value=".net">.net</option>
+  <option value="angular">angular</option>
+  <option value="java">java</option>
+  <option value="test">test</option>
+</select>
+
+<select class="select" id="select_2">
+</select>
+
+
+<script>
+  const select_1 = document.querySelector('#select_1');
+  const select_2 = document.querySelector('#select_2');
+  const students = [
+    {id: 1, name: 'tran van a', className: '.net'},
+    {id: 2, name: 'tran van b', className: '.net'},
+    {id: 3, name: 'tran van c', className: 'angular'},
+    {id: 4, name: 'tran van d', className: 'angular'},
+    {id: 5, name: 'tran van e', className: 'java'},
+    {id: 6, name: 'tran van f', className: 'java'},
+    {id: 7, name: 'tran van g', className: 'java'},
+    {id: 8, name: 'tran van h', className: 'test'},
+    {id: 9, name: 'tran van i', className: 'test'},
+    {id: 10, name: 'tran van j', className: 'test'}
+  ];
+
+  const locTheoClass = function (tenLop) {
+    return students.filter(function (student) {
+      return student.className === tenLop.toString();
+    });
+  };
+
+  
+  function select_1_onchange_handler() {
+    
+    const tenLop = select_1.options[select_1.selectedIndex].value;
+
+    
+    const studentObjects = locTheoClass(tenLop);
+
+   
+    select_2.options.length = 0;
+
+    
+    studentObjects.forEach(e => {
+      const hsMoi = document.createElement("option");
+      hsMoi.text = e.name;
+      hsMoi.value = e.name;
+      console.log(hsMoi);
+      select_2.add(hsMoi);
+    })
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    select_1_onchange_handler();
+  });
+
+  
+  select_1.onchange = () => {
+    select_1_onchange_handler();
+  }
+
+</script>
+</body>
+</html>

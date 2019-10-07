@@ -1,0 +1,148 @@
+
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  color:black;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  background-color:#e5e5e5;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
+  color: black;
+}
+
+@media only screen and (max-width:700px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+.main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+}
+.video-section {
+  background-color: #fff;
+  width: 100%;
+  max-width: 1000px;
+  padding: 15px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 25%;
+  padding: 5px 2px;
+  margin-bottom: 24px;
+}
+
+@media(max-width: 1000px) {
+  .card {
+      width: 33.33%
+  }
+}
+
+@media(max-width: 700px) {
+  .card {
+      width: 50%
+  }
+}
+
+@media(max-width: 350px) {
+  .card {
+      width: auto
+  }
+}
+
+.card__video {
+  width: 100%;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 14px;
+  color: #1d1d1d;
+  padding: 10px 8px 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 140px;
+    display: block;
+    overflow: hidden
+}
+
+
+.card__name {
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  color: #111111;
+  padding: 10px 8px 0 0;
+}
+
+.card__views {
+  display: inline-block;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8f8f8f;
+}
+
+.card__published-date {
+  width: 100%;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8f8f8f;
+}
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  padding: 12px 0;
+}
+
+.video-list {
+  padding: 10px 0;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-list__title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #212121;
+  font-weight: 500;
+  margin: 0 2px;
+  width: 100%;
+  padding: 10px 0;
+}
+.footer{
+  background-color:#e5e5e5;
+  text-align:center;
+  padding:10px;
+  margin-top:7px;
+  color: black;
+}
